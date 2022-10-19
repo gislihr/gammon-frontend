@@ -17,3 +17,8 @@ export interface GetAllPlayers_players {
 export interface GetAllPlayers {
   players: GetAllPlayers_players[];
 }
+
+export interface GetAllPlayersVariables {
+  limit?: number | null;
+  offset?: number | null;
+}

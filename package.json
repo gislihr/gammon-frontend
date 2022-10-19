@@ -8,7 +8,8 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "schema:download": "npx apollo service:download --endpoint=https://gammon-api.herokuapp.com/query graphql-schema.json",
-    "schema:generate": "npx apollo codegen:generate --localSchemaFile='graphql-schema.json' --target=typescript --tagName=gql"
+    "schema:generate": "npx apollo codegen:generate --localSchemaFile='graphql-schema.json' --target=typescript --tagName=gql",
+    "playground": "python scripts/open.py"
   },
   "dependencies": {
     "@apollo/client": "^3.7.0",

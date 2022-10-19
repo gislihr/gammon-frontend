@@ -4,7 +4,11 @@ import { GET_ALL_PLAYERS } from "./operations/query/getAllPlayers";
 import { GetAllPlayers } from "./operations/query/__generated__/GetAllPlayers";
 
 function App() {
-  const { data, loading, error } = useQuery<GetAllPlayers>(GET_ALL_PLAYERS);
+  const { data, loading, error } = useQuery<GetAllPlayers>(GET_ALL_PLAYERS, {
+    variables: {
+      limit: 30,
+    },
+  });
 
   if (loading) {
     return <div>Loading...</div>;
