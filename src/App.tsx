@@ -18,7 +18,11 @@ function App() {
     return <div>{error.message}</div>;
   }
 
-  return <PlayerList players={data!.players}></PlayerList>;
+  if (!data) {
+    return <div>No data returned</div>;
+  }
+
+  return <PlayerList players={data.players}></PlayerList>;
 }
 
 export default App;
