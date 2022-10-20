@@ -1,12 +1,19 @@
 import { useQuery } from "@apollo/client";
 import PlayerList from "./components/PlayerList/PlayerList";
 import { GET_ALL_PLAYERS } from "./operations/query/getAllPlayers";
-import { GetAllPlayers } from "./operations/query/__generated__/GetAllPlayers";
+import {
+  GetAllPlayers,
+  GetAllPlayersVariables,
+} from "./operations/query/__generated__/GetAllPlayers";
 
 function App() {
-  const { data, loading, error } = useQuery<GetAllPlayers>(GET_ALL_PLAYERS, {
+  const { data, loading, error } = useQuery<
+    GetAllPlayers,
+    GetAllPlayersVariables
+  >(GET_ALL_PLAYERS, {
     variables: {
       limit: 30,
+      offset: 0,
     },
   });
 
